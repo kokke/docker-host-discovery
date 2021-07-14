@@ -1,5 +1,5 @@
 FROM alpine:latest
 
-COPY ./t.sh /tmp/t.sh
+COPY ./icmp_discov_httpd.sh.sh /tmp/icmp_discov_httpd.sh.sh
 
 EXPOSE 1500
