@@ -36,6 +36,7 @@
 
 ### Demo:
 
-The scripts [`run-test.sh`](https://github.com/kokke/docker-host-discovery/blob/main/run-test.sh)/[`run-test.cmd`](https://github.com/kokke/docker-host-discovery/blob/main/run-test.cmd) demonstrates this, by starting all services and then gradually stopping one.
-Running the script demonstrates that the host-discovery service responds to changes approximately within a second.
+The scripts [`run-test.sh`](https://github.com/kokke/docker-host-discovery/blob/main/run-test.sh)/[`run-test.cmd`](https://github.com/kokke/docker-host-discovery/blob/main/run-test.cmd) demonstrates this, by starting all services and then gradually stopping them again.
+
+Running the script demonstrates the host-discovery service responding to changes approximately within a second.
 
