@@ -6,7 +6,7 @@ function serve_http() {
   echo "Serving HTTP"
 
   # use netcat to make webserver on port 1500, serving contents of ips
-  # 'head -c -1 <file>' removes trailing newline from file
+  # 'head -c -1 <file>' removes trailing newline from file; -2 removes trailing newline + comma
   while true; do 
     # timeout process after some time, to reload file read from disk
     # if this is not done, the file is read then nc starts blocking - so potentially a very old read
