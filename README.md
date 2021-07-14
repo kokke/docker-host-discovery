@@ -33,8 +33,9 @@
 
   - MQTT server aka mosquitto
   - MQTT clients aka client-1 & client-2
-  - ICMP host-discovery-service aka host-disco
+  - ICMP host-discovery-service aka host-disco in see ([host-disco/icmp_discov_httpd.sh](https://github.com/kokke/docker-host-discovery/blob/main/host-disco/icmp_discov_httpd.sh))
 
+Ignore the MQTT server and clients, they are only included to have hosts to discover.
 
 ### Demo:
 
