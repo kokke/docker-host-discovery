@@ -1,0 +1,48 @@
+version: '3.1'
+services:
+  mosquitto:
+      image: eclipse-mosquitto
+      hostname: mosquitto
+      container_name: mosquitto
+      ports:
+        - "1883:1883"
+      volumes: 
+        - ./mosquitto:/mosquitto/config
+      networks:
+        - mqtt-network
+      stop_grace_period: 1s
+
+  client-1:
+    image: alpine:latest
+    hostname: client-1
+    container_name: client-1
+    depends_on:
+      - mosquitto
+    volumes:
+      - ./client1:/app
+    networks:
+      - mqtt-network
+    stop_grace_period: 1s
+    command: >
+      sh -c "apk add --no-cache python3 py3-paho-mqtt &&
+             python3 /app/client.py"
+
+  client-2:
+    image: alpine:latest
+    hostname: client-2
+    container_name: client-2
+    depends_on:
+      - mosquitto
+    volumes:
+      - ./client2:/app
+    networks:
+      - mqtt-network
+    stop_grace_period: 1s
+    command: >
+      sh -c "apk add --no-cache python3 py3-paho-mqtt &&
+             python3 /app/client.py"
+
+networks:
+  mqtt-network: 
+    driver: bridge
+
