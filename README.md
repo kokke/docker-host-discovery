@@ -1,6 +1,6 @@
 # docker-host-discovery
 
-### ICMP network host discovery in JSON over HTTP
+### ICMP network host discovery, served in JSON over HTTP
 
 **Find online hosts in own subnet, serve results as JSON over HTTP**
 
@@ -14,8 +14,8 @@
  - Runs without dependencies in [Alpine Linux](https://alpinelinux.org/)-container
  - Does network host discovery using ICMP Echo (ping) and filters responding hosts.
    (NOTE: ICMP echo-replies must be enabled, `net.ipv4.icmp_echo_ignore_all=0`)
-  - Single shell script for ICMP flooding, "web-server" + JSON encoding ([host-disco/icmp_discov_httpd.sh](https://github.com/kokke/docker-host-discovery/blob/main/host-disco/icmp_discov_httpd.sh))
-- Publishes results as a JSON-object through HTTP (port 1500 by default) - example-output: 
+ - Single shell script for ICMP flooding, "web-server" + JSON encoding ([host-disco/icmp_discov_httpd.sh](https://github.com/kokke/docker-host-discovery/blob/main/host-disco/icmp_discov_httpd.sh))
+ - Serves output as JSON over HTTP ("web server" runs on port 1500 by default), example-output: 
    ```json
    {
        "hosts": [
